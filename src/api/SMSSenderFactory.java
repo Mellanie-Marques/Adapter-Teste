@@ -7,10 +7,8 @@ public class SMSSenderFactory {
         String csp = PhoneNumberValidator.extractCSP(phoneNumber);
         return switch (csp) {
             case "41" -> new TimSMSSender();
-            case "15" -> new VivoSMSSender();
+            case "15" -> new VivoAdapter(); // Usando o Adapter para a VIVO
             default -> throw new IllegalArgumentException("Operadora desconhecida.");
         };
     }
 }
-
-

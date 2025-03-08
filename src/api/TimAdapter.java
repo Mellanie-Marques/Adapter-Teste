@@ -1,9 +1,9 @@
 package api;
 
-import model.SMS;
 import java.time.format.DateTimeFormatter;
+import model.SMS;
 
-public class TimService implements SMSSender{
+public class TimAdapter implements SMSSender{
     @Override
     public boolean sendSMS(SMS sms) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
